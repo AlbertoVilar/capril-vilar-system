@@ -1,7 +1,9 @@
 package com.caprilvilar.capril.entities;
 
 import com.caprilvilar.capril.GoatFarm;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
@@ -18,7 +20,7 @@ public class Goat {
     private String breed;
 
     @Column(name = "goat_color")
-    private String goatColor;
+    private String color;
 
     private String status;
     private String gender;
@@ -29,30 +31,32 @@ public class Goat {
 
     @ManyToOne
     @JoinColumn(name = "father_id", referencedColumnName = "registration_number")
+    @JsonIgnore
     private Goat father;
 
     @ManyToOne
     @JoinColumn(name = "mother_id", referencedColumnName = "registration_number")
+    @JsonIgnore
     private Goat mother;
 
     @ManyToOne
     @JoinColumn(name = "goat_farm_id")
     private GoatFarm goatFarm;
 
-    // Construtor padrão
+    // 🔹 Construtor padrão (obrigatório para JPA)
     public Goat() {
     }
 
-    // Construtor completo
+    // 🔹 Construtor completo
     public Goat(String registrationNumber, String name, String breeder, String ownerName,
-                String breed, String goatColor, String status, String gender, String category,
+                String breed, String color, String status, String gender, String category,
                 String tod, String toe, LocalDate birthDate, Goat father, Goat mother, GoatFarm goatFarm) {
         this.registrationNumber = registrationNumber;
         this.name = name;
         this.breeder = breeder;
         this.ownerName = ownerName;
         this.breed = breed;
-        this.goatColor = goatColor;
+        this.color = color;
         this.status = status;
         this.gender = gender;
         this.category = category;
@@ -64,49 +68,124 @@ public class Goat {
         this.goatFarm = goatFarm;
     }
 
-    // Getters e Setters
-    public String getRegistrationNumber() { return registrationNumber; }
-    public void setRegistrationNumber(String registrationNumber) { this.registrationNumber = registrationNumber; }
+    // 🔹 Getters e Setters
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
 
-    public String getBreeder() { return breeder; }
-    public void setBreeder(String breeder) { this.breeder = breeder; }
+    public String getName() {
+        return name;
+    }
 
-    public String getOwnerName() { return ownerName; }
-    public void setOwnerName(String ownerName) { this.ownerName = ownerName; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public String getBreed() { return breed; }
-    public void setBreed(String breed) { this.breed = breed; }
+    public String getBreeder() {
+        return breeder;
+    }
 
-    public String getGoatColor() { return goatColor; }
-    public void setGoatColor(String goatColor) { this.goatColor = goatColor; }
+    public void setBreeder(String breeder) {
+        this.breeder = breeder;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getOwnerName() {
+        return ownerName;
+    }
 
-    public String getGender() { return gender; }
-    public void setGender(String gender) { this.gender = gender; }
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
 
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
+    public String getBreed() {
+        return breed;
+    }
 
-    public String getTod() { return tod; }
-    public void setTod(String tod) { this.tod = tod; }
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
 
-    public String getToe() { return toe; }
-    public void setToe(String toe) { this.toe = toe; }
+    public String getColor() {
+        return color;
+    }
 
-    public LocalDate getBirthDate() { return birthDate; }
-    public void setBirthDate(LocalDate birthDate) { this.birthDate = birthDate; }
+    public void setColor(String color) {
+        this.color = color;
+    }
 
-    public Goat getFather() { return father; }
-    public void setFather(Goat father) { this.father = father; }
+    public String getStatus() {
+        return status;
+    }
 
-    public Goat getMother() { return mother; }
-    public void setMother(Goat mother) { this.mother = mother; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-    public GoatFarm getGoatFarm() { return goatFarm; }
-    public void setGoatFarm(GoatFarm goatFarm) { this.goatFarm = goatFarm; }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getTod() {
+        return tod;
+    }
+
+    public void setTod(String tod) {
+        this.tod = tod;
+    }
+
+    public String getToe() {
+        return toe;
+    }
+
+    public void setToe(String toe) {
+        this.toe = toe;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public Goat getFather() {
+        return father;
+    }
+
+    public void setFather(Goat father) {
+        this.father = father;
+    }
+
+    public Goat getMother() {
+        return mother;
+    }
+
+    public void setMother(Goat mother) {
+        this.mother = mother;
+    }
+
+    public GoatFarm getGoatFarm() {
+        return goatFarm;
+    }
+
+    public void setGoatFarm(GoatFarm goatFarm) {
+        this.goatFarm = goatFarm;
+    }
 }

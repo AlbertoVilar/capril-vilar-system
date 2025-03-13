@@ -43,7 +43,7 @@ INSERT INTO goats (registration_number, name, gender, breed, goat_color, status,
 INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622009', 'Mãe', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2021-08-20', '164622011', '164622012');
 
 -- 🐐 FILHO
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622010', 'Cabrito Principal', 'Macho', 'Boer', 'Branca', 'Ativo', 'Reprodutor', '2024-03-01', '164622001', '164622009');
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622010', 'Cabrito Principal', 'Macho', 'Alpina', 'Chamoisee', 'Ativo', 'Reprodutor', '2024-03-01', '164622001', '164622009');
 
 
 
