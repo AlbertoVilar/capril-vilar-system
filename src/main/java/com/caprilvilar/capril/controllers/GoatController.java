@@ -5,6 +5,8 @@ import com.caprilvilar.capril.services.GoatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/goats")
 public class GoatController {
@@ -18,9 +20,26 @@ public class GoatController {
         return service.findById(id);
     }
 
+    @GetMapping
+    public List<GoatDTO> findAll() {
+
+        return service.findAll();
+    }
+
     @PostMapping
     public GoatDTO insert(@RequestBody GoatDTO dto) {
 
         return service.insert(dto);
+    }
+
+    @PutMapping(value = "/{id}")
+    public GoatDTO updateGoat(@PathVariable String id, @RequestBody GoatDTO dto) {
+
+        return service.updateGoat(id, dto);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void deleteGoat(@PathVariable String id) {
+        service.deleteGoat(id);
     }
 }
