@@ -21,6 +21,9 @@ public class GoatDTO {
     private String mother;
     private String registrationNumberMother;
 
+    public GoatDTO() {
+    }
+
     public GoatDTO(Goat goat) {
         this.registrationNumber = goat.getRegistrationNumber();
         this.name = goat.getName();

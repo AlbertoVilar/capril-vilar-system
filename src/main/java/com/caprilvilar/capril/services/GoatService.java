@@ -24,4 +24,13 @@ public class GoatService {
 
         return new GoatDTO(goat);
     }
+
+    public GoatDTO insert(GoatDTO dto) {
+        Goat goat = new Goat(dto);
+        goat = repository.save(goat);
+        return new GoatDTO(goat);
+    }
+
+
+
 }

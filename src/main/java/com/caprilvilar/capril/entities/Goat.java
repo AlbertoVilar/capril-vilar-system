@@ -1,6 +1,7 @@
 package com.caprilvilar.capril.entities;
 
 import com.caprilvilar.capril.GoatFarm;
+import com.caprilvilar.capril.dtos.GoatDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -67,6 +68,25 @@ public class Goat {
         this.mother = mother;
         this.goatFarm = goatFarm;
     }
+
+    public Goat(GoatDTO dto) {
+        this.registrationNumber = dto.getRegistrationNumber();
+        this.name = dto.getName();
+        this.breeder = dto.getBreeder();
+        this.ownerName = dto.getOwnerName();
+        this.breed = dto.getBreed();
+        this.color = dto.getColor();
+        this.status = dto.getStatus();
+        this.gender = dto.getGender();
+        this.category = dto.getCategory();
+        this.tod = dto.getTod();
+        this.toe = dto.getToe();
+        this.birthDate = dto.getBirthDate();
+        // Pai e mãe precisarão ser buscados no banco ou passados de outra forma
+        this.father = null; // ou buscar no repositório
+        this.mother = null; // ou buscar no repositório
+    }
+
 
     // 🔹 Getters e Setters
     public String getRegistrationNumber() {
