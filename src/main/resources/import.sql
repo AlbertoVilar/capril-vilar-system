@@ -9,6 +9,7 @@ INSERT INTO addresses (street, city, state, postal_code, country) VALUES ('Rua d
 INSERT INTO owners (name, email, address_id) VALUES ('Alberto Vilar', 'albertovilar1@email.com', 2);
 INSERT INTO owners (name, email, address_id) VALUES ('Maria Oliveira', 'maria@email.com', 1);
 INSERT INTO owners (name, email, address_id) VALUES ('Carlos Souza', 'carlos@email.com', 3);
+INSERT INTO owners (name, email, address_id) VALUES ('Leonardo Santos', 'leosantos@email.com', 2);
 
 
 -- Inserindo registros na tabela goat_farms
@@ -18,34 +19,6 @@ INSERT INTO goat_farms (name, registration_number, owner_id, address_id) VALUES 
 INSERT INTO phones (number, owner_id, goat_farm_id) VALUES ('11987654321', 1, 1);
 INSERT INTO phones (number, owner_id, goat_farm_id) VALUES ('1133224455', 2, 1);
 
--- 🐐 BISAVÓS PATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622005', 'Bisavô Paterno Paterno', 'Macho', 'Boer', 'Preto', 'Ativo', 'Reprodutor', '2016-09-10', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622006', 'Bisavó Paterna Paterna', 'Fêmea', 'Boer', 'Branca', 'Ativo', 'Matriz', '2016-10-30', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622013', 'Bisavô Paterno Materno', 'Macho', 'Boer', 'Marrom', 'Ativo', 'Reprodutor', '2016-03-15', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622014', 'Bisavó Paterna Materna', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2016-05-22', NULL, NULL);
-
--- 🐐 BISAVÓS MATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622015', 'Bisavô Materno Paterno', 'Macho', 'Boer', 'Preto', 'Ativo', 'Reprodutor', '2015-07-19', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622016', 'Bisavó Materna Paterna', 'Fêmea', 'Boer', 'Branca', 'Ativo', 'Matriz', '2015-09-05', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622017', 'Bisavô Materno Materno', 'Macho', 'Boer', 'Marrom Claro', 'Ativo', 'Reprodutor', '2015-02-11', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622018', 'Bisavó Materna Materna', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2015-04-28', NULL, NULL);
-
--- 🐐 AVÓS PATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622007', 'Avô Paterno', 'Macho', 'Boer', 'Preto', 'Ativo', 'Reprodutor', '2019-04-10', '164622005', '164622006');
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622008', 'Avó Paterna', 'Fêmea', 'Boer', 'Branca', 'Ativo', 'Matriz', '2019-06-22', '164622013', '164622014');
-
--- 🐐 AVÓS MATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622011', 'Avô Materno', 'Macho', 'Boer', 'Marrom Claro', 'Ativo', 'Reprodutor', '2019-02-18', '164622015', '164622016');
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622012', 'Avó Materna', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2019-07-25', '164622017', '164622018');
-
--- 🐐 PAIS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622001', 'Pai', 'Macho', 'Boer', 'Marrom', 'Ativo', 'Reprodutor', '2021-05-15', '164622007', '164622008');
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622009', 'Mãe', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2021-08-20', '164622011', '164622012');
-
--- 🐐 FILHO
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622010', 'Cabrito Principal', 'Macho', 'Alpina', 'Chamoisee', 'Ativo', 'Reprodutor', '2024-03-01', '164622001', '164622009');
-
-
-
-
-
+INSERT INTO goats (NOME, REGISTRO, CRIADOR, PROPRIETARIO_ID, RACA, PELAGEM, SITUACAO, SEXO, CATEGORIA, TOD, TOE, DATA_NASCIMENTO, PAI_NOME, PAI_REGISTRO, MAE_NOME, MAE_REGISTRO, AVO_PATERNO_NOME, AVO_PATERNO_REGISTRO, AVO_PATERNA_NOME, AVO_PATERNA_REGISTRO, AVO_MATERNO_NOME, AVO_MATERNO_REGISTRO, AVO_MATERNA_NOME, AVO_MATERNA_REGISTRO, BISAVO_PATERNO1_NOME, BISAVO_PATERNO1_REGISTRO, BISAVO_PATERNO2_NOME, BISAVO_PATERNO2_REGISTRO, BISAVO_PATERNA1_NOME, BISAVO_PATERNA1_REGISTRO, BISAVO_PATERNA2_NOME, BISAVO_PATERNA2_REGISTRO, BISAVO_MATERNO1_NOME, BISAVO_MATERNO1_REGISTRO, BISAVO_MATERNO2_NOME, BISAVO_MATERNO2_REGISTRO, BISAVO_MATERNA1_NOME, BISAVO_MATERNA1_REGISTRO, BISAVO_MATERNA2_NOME, BISAVO_MATERNA2_REGISTRO) VALUES ('CELINA DO EXTREMA', '1618423003', 'EDENILTON DA COSTA CAVALCANTE', 1, 'ALPINA', 'CHAMOISÉE', 'RGD', 'Fêmea', 'PO', 16184, 23003, '2023-03-06', 'ADOM IA DO EXTREMA', '1618420025', 'ABSOLUTA DO EXTREMA', '1618421066', 'BALOTELI DA CAPRIVAMA', '1422913451', 'COROA DA CAPRIVAMA', '1422913488', 'HERE DO ANGICANO', '2104406006', 'TOPÁZIO DO CRS', '2114510040', 'ZEUS DA MONTANHA', '1422919999', 'ATENA DA SERRA', '1422918888', 'HÉRCULES DO SUL', '1422917777', 'AFRODITE DO VALE', '1422916666', 'POSEIDON DA FAZENDA', '1422915555', 'DEMÉTER DO CAMPO', '1422914444', 'ARES DA PLANÍCIE', '1422913333', 'HEBE DAS COLINAS', '1422912222');
+INSERT INTO goats (NOME, REGISTRO, CRIADOR, PROPRIETARIO_ID, RACA, PELAGEM, SITUACAO, SEXO, CATEGORIA, TOD, TOE, DATA_NASCIMENTO, PAI_NOME, PAI_REGISTRO, MAE_NOME, MAE_REGISTRO, AVO_PATERNO_NOME, AVO_PATERNO_REGISTRO, AVO_PATERNA_NOME, AVO_PATERNA_REGISTRO, AVO_MATERNO_NOME, AVO_MATERNO_REGISTRO, AVO_MATERNA_NOME, AVO_MATERNA_REGISTRO, BISAVO_PATERNO1_NOME, BISAVO_PATERNO1_REGISTRO, BISAVO_PATERNO2_NOME, BISAVO_PATERNO2_REGISTRO, BISAVO_PATERNA1_NOME, BISAVO_PATERNA1_REGISTRO, BISAVO_PATERNA2_NOME, BISAVO_PATERNA2_REGISTRO, BISAVO_MATERNO1_NOME, BISAVO_MATERNO1_REGISTRO, BISAVO_MATERNO2_NOME, BISAVO_MATERNO2_REGISTRO, BISAVO_MATERNA1_NOME, BISAVO_MATERNA1_REGISTRO, BISAVO_MATERNA2_NOME, BISAVO_MATERNA2_REGISTRO) VALUES ('BRISA DO SERTÃO', '1623456789', 'MARIA FERREIRA', 2, 'Saanen', 'Branca', 'Ativa', 'Fêmea', 'PO', 16234, 56789, '2022-08-15', 'VENTO DO NORDESTE', '1623450023', 'LUA DO SERTÃO', '1623451011', 'NATAL DO JACOMÉ', '1403110395', '12018 CAPRIMEL', '1650112018', 'JOSA CAPRIMEL', '1650113018', 'PANTALONA DO CRS', '2114513061', 'TITÃ DO VALE', '1403117777', 'GAIA DAS ROCHAS', '1403116666', 'CRONOS DA FAZENDA', '1403115555', 'RÉIA DA MONTANHA', '1403114444', 'DIONÍSIO DO SERTÃO', '1403113333', 'HEFESTO DAS PEDRAS', '1403112222', 'HERA DO CAMPO', '1403111111', 'PÉRSÉFONE DA SERRA', '1403110000');
+INSERT INTO goats (NOME, REGISTRO, CRIADOR, PROPRIETARIO_ID, RACA, PELAGEM, SITUACAO, SEXO, CATEGORIA, TOD, TOE, DATA_NASCIMENTO, PAI_NOME, PAI_REGISTRO, MAE_NOME, MAE_REGISTRO, AVO_PATERNO_NOME, AVO_PATERNO_REGISTRO, AVO_PATERNA_NOME, AVO_PATERNA_REGISTRO, AVO_MATERNO_NOME, AVO_MATERNO_REGISTRO, AVO_MATERNA_NOME, AVO_MATERNA_REGISTRO, BISAVO_PATERNO1_NOME, BISAVO_PATERNO1_REGISTRO, BISAVO_PATERNO2_NOME, BISAVO_PATERNO2_REGISTRO, BISAVO_PATERNA1_NOME, BISAVO_PATERNA1_REGISTRO, BISAVO_PATERNA2_NOME, BISAVO_PATERNA2_REGISTRO, BISAVO_MATERNO1_NOME, BISAVO_MATERNO1_REGISTRO, BISAVO_MATERNO2_NOME, BISAVO_MATERNO2_REGISTRO, BISAVO_MATERNA1_NOME, BISAVO_MATERNA1_REGISTRO, BISAVO_MATERNA2_NOME, BISAVO_MATERNA2_REGISTRO) VALUES ('TROVÃO DA SERRA', '1634567890', 'CARLOS ALMEIDA', 3, 'Boer', 'Vermelha e Branca', 'Ativo', 'Macho', 'PO', 16345, 67890, '2021-11-30', 'FURACÃO DO CAMPO', '1634560028', 'ESTRELA DA MONTANHA', '1634561035', 'SHEREK SANRI', '1421308033', 'JUCELISE DO INLI', '1418510219', 'PETRÓLEO CAPRIVAMA', '1422915618', 'BÉLGICA DA CAPRIVAMA', '1422913470', 'HERMES DO SERTÃO', '1421309999', 'NÊMESIS DA FAZENDA', '1421308888', 'ZEUS DO VALE', '1421307777', 'HÉSTIA DA PLANÍCIE', '1421306666', 'HADES DAS MONTANHAS', '1421305555', 'HESTOR DAS ROCHAS', '1421304444', 'ARTEMIS DO SUL', '1421303333', 'APOLO DAS TERRAS', '1421302222');

@@ -15,7 +15,7 @@ public class GoatController {
     public GoatService service;
 
     @GetMapping(value = "/{id}")
-    public GoatDTO findById(@PathVariable String id) {
+    public GoatDTO findById(@PathVariable Long id) {
 
         return service.findById(id);
     }
@@ -33,13 +33,13 @@ public class GoatController {
     }
 
     @PutMapping(value = "/{id}")
-    public GoatDTO updateGoat(@PathVariable String id, @RequestBody GoatDTO dto) {
+    public GoatDTO updateGoat(@PathVariable Long id, @RequestBody GoatDTO dto) {
 
         return service.updateGoat(id, dto);
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteGoat(@PathVariable String id) {
+    public void deleteGoat(@PathVariable Long id) {
         service.deleteGoat(id);
     }
 }
