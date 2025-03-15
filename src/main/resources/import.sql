@@ -18,34 +18,30 @@ INSERT INTO goat_farms (name, registration_number, owner_id, address_id) VALUES 
 INSERT INTO phones (number, owner_id, goat_farm_id) VALUES ('11987654321', 1, 1);
 INSERT INTO phones (number, owner_id, goat_farm_id) VALUES ('1133224455', 2, 1);
 
--- 🐐 BISAVÓS PATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622005', 'Bisavô Paterno Paterno', 'Macho', 'Boer', 'Preto', 'Ativo', 'Reprodutor', '2016-09-10', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622006', 'Bisavó Paterna Paterna', 'Fêmea', 'Boer', 'Branca', 'Ativo', 'Matriz', '2016-10-30', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622013', 'Bisavô Paterno Materno', 'Macho', 'Boer', 'Marrom', 'Ativo', 'Reprodutor', '2016-03-15', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622014', 'Bisavó Paterna Materna', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2016-05-22', NULL, NULL);
+--  BISAVÓS PATERNOS
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1422913451', 'BALOTELI DA CAPRIVAMAR', 'Macho', 'Alpina', 'Indefinida', 'ATIVO', 'Reprodutor', '2013-01-01', NULL, NULL, true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1422913488', 'COROA DA CAPRIVAMAR', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2013-01-01', NULL, NULL, true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1421308033', 'SHEREK SANRI', 'Macho', 'Alpina', 'Indefinida', 'ATIVO', 'Reprodutor', '2008-01-01', NULL, NULL, true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1418510219', 'JUCELISE DO INLI', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2010-01-01', NULL, NULL, true);
 
--- 🐐 BISAVÓS MATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622015', 'Bisavô Materno Paterno', 'Macho', 'Boer', 'Preto', 'Ativo', 'Reprodutor', '2015-07-19', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622016', 'Bisavó Materna Paterna', 'Fêmea', 'Boer', 'Branca', 'Ativo', 'Matriz', '2015-09-05', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622017', 'Bisavô Materno Materno', 'Macho', 'Boer', 'Marrom Claro', 'Ativo', 'Reprodutor', '2015-02-11', NULL, NULL);
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622018', 'Bisavó Materna Materna', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2015-04-28', NULL, NULL);
+--  BISAVÓS MATERNOS
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1403110395', 'NATAL DO JACOMÉ', 'Macho', 'Alpina', 'Indefinida', 'ATIVO', 'Reprodutor', '2010-01-01', NULL, NULL, true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1650112018', '12018 CAPRIMEL', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2012-01-01', NULL, NULL, true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('2104406006', 'HERE DO ANGICANO', 'Macho', 'Alpina', 'Indefinida', 'ATIVO', 'Reprodutor', '2006-01-01', NULL, NULL, true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('2114510040', 'TOPÁZIO DO CRS', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2010-01-01', NULL, NULL, true);
 
--- 🐐 AVÓS PATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622007', 'Avô Paterno', 'Macho', 'Boer', 'Preto', 'Ativo', 'Reprodutor', '2019-04-10', '164622005', '164622006');
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622008', 'Avó Paterna', 'Fêmea', 'Boer', 'Branca', 'Ativo', 'Matriz', '2019-06-22', '164622013', '164622014');
+--  AVÓS PATERNOS
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1422915618', 'PETRÓLEO CAPRIVAMAR', 'Macho', 'Alpina', 'Indefinida', 'ATIVO', 'Reprodutor', '2015-01-01', '1422913451', '1422913488', true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1422913470', 'BÉLGICA DA CAPRIVAMAR', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2013-01-01', '1421308033', '1418510219', true);
 
--- 🐐 AVÓS MATERNOS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622011', 'Avô Materno', 'Macho', 'Boer', 'Marrom Claro', 'Ativo', 'Reprodutor', '2019-02-18', '164622015', '164622016');
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622012', 'Avó Materna', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2019-07-25', '164622017', '164622018');
+--  AVÓS MATERNOS
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1650113018', 'JOSA CAPRIMEL', 'Macho', 'Alpina', 'Indefinida', 'ATIVO', 'Reprodutor', '2013-01-01', '1403110395', '1650112018', true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('2114513061', 'PANTALONA DO CRS', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2013-01-01', '2104406006', '2114510040', true);
 
--- 🐐 PAIS
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622001', 'Pai', 'Macho', 'Boer', 'Marrom', 'Ativo', 'Reprodutor', '2021-05-15', '164622007', '164622008');
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622009', 'Mãe', 'Fêmea', 'Boer', 'Bege', 'Ativo', 'Matriz', '2021-08-20', '164622011', '164622012');
+--  PAIS
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1635717065', 'C.V.C SIGNOS PETROLEO', 'Macho', 'Alpina', 'Indefinida', 'ATIVO', 'Reprodutor', '2017-01-01', '1422915618', '1422913470', true);
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('2114517012', 'NAIDE DO CRS', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2017-01-01', '1650113018', '2114513061', true);
 
--- 🐐 FILHO
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id) VALUES ('164622010', 'Cabrito Principal', 'Macho', 'Alpina', 'Chamoisee', 'Ativo', 'Reprodutor', '2024-03-01', '164622001', '164622009');
-
-
-
-
+--  FILHO
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1643218012', 'XEQUE V DO CAPRIL VILAR', 'Macho', 'Alpina', 'CHAMOISÉE', 'ATIVO', 'POT', '2018-06-27', '1635717065', '2114517012', true);
 

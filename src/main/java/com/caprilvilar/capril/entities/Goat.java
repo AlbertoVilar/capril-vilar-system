@@ -23,7 +23,9 @@ public class Goat {
     @Column(name = "goat_color")
     private String color;
 
-    private String status;
+    @Enumerated(EnumType.STRING) // Adicionado para o Enum GoatStatus
+    private GoatStatus status;
+
     private String gender;
     private String category;
     private String tod;
@@ -44,13 +46,17 @@ public class Goat {
     @JoinColumn(name = "goat_farm_id")
     private GoatFarm goatFarm;
 
-    // 🔹 Construtor padrão (obrigatório para JPA)
+    @Column(name = "active")
+    private boolean active; // Adicionando o campo 'ativo'
+
+
     public Goat() {
+        this.active = true; // Valor padrão para 'ativo'
     }
 
-    // 🔹 Construtor completo
+
     public Goat(String registrationNumber, String name, String breeder, String ownerName,
-                String breed, String color, String status, String gender, String category,
+                String breed, String color, GoatStatus status, String gender, String category,
                 String tod, String toe, LocalDate birthDate, Goat father, Goat mother, GoatFarm goatFarm) {
         this.registrationNumber = registrationNumber;
         this.name = name;
@@ -67,6 +73,7 @@ public class Goat {
         this.father = father;
         this.mother = mother;
         this.goatFarm = goatFarm;
+        this.active = true;
     }
 
     public Goat(GoatDTO dto) {
@@ -76,19 +83,16 @@ public class Goat {
         this.ownerName = dto.getOwnerName();
         this.breed = dto.getBreed();
         this.color = dto.getColor();
-        this.status = dto.getStatus();
+        this.status = GoatStatus.valueOf(dto.getStatus().name()); // Correção aqui
         this.gender = dto.getGender();
         this.category = dto.getCategory();
         this.tod = dto.getTod();
         this.toe = dto.getToe();
         this.birthDate = dto.getBirthDate();
-        // Pai e mãe precisarão ser buscados no banco ou passados de outra forma
-        this.father = null; // ou buscar no repositório
-        this.mother = null; // ou buscar no repositório
+        this.active = true;
     }
 
-
-    // 🔹 Getters e Setters
+    //  Getters e Setters
     public String getRegistrationNumber() {
         return registrationNumber;
     }
@@ -137,11 +141,11 @@ public class Goat {
         this.color = color;
     }
 
-    public String getStatus() {
+    public GoatStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(GoatStatus status) {
         this.status = status;
     }
 
@@ -207,5 +211,13 @@ public class Goat {
 
     public void setGoatFarm(GoatFarm goatFarm) {
         this.goatFarm = goatFarm;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
