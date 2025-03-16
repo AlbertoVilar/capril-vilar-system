@@ -1,6 +1,5 @@
 package com.caprilvilar.capril.entities;
 
-import com.caprilvilar.capril.GoatFarm;
 import com.caprilvilar.capril.dtos.GoatDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -42,7 +41,8 @@ public class Goat {
     @JsonIgnore
     private Goat mother;
 
-    @ManyToOne
+    // Goat.java
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "goat_farm_id")
     private GoatFarm goatFarm;
 
@@ -74,37 +74,6 @@ public class Goat {
         this.mother = mother;
         this.goatFarm = goatFarm;
         this.active = true;
-    }
-
-    public Goat(GoatDTO dto) {
-        this.registrationNumber = dto.getRegistrationNumber();
-        this.name = dto.getName();
-        this.breeder = dto.getBreeder();
-        this.ownerName = dto.getOwnerName();
-        this.breed = dto.getBreed();
-        this.color = dto.getColor();
-        this.status = GoatStatus.valueOf(dto.getStatus().name());
-        this.gender = dto.getGender();
-        this.category = dto.getCategory();
-        this.tod = dto.getTod();
-        this.toe = dto.getToe();
-        this.birthDate = dto.getBirthDate();
-        this.active = true;
-
-        // Correção: Usar registrationNumberFather e registrationNumberMother
-        if (dto.getRegistrationNumberFather() != null) {
-            Goat father = new Goat();
-            father.setRegistrationNumber(dto.getRegistrationNumberFather());
-            this.father = father;
-        }
-        if (dto.getRegistrationNumberMother() != null) {
-            Goat mother = new Goat();
-            mother.setRegistrationNumber(dto.getRegistrationNumberMother());
-            this.mother = mother;
-        }
-
-        //Definir goatFarm
-        this.goatFarm = null; //Ou defina o goatFarm aqui.
     }
 
     //  Getters e Setters

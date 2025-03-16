@@ -1,6 +1,5 @@
 package com.caprilvilar.capril.entities;
 
-import com.caprilvilar.capril.GoatFarm;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

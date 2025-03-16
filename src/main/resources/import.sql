@@ -11,8 +11,7 @@ INSERT INTO owners (name, email, address_id) VALUES ('Maria Oliveira', 'maria@em
 INSERT INTO owners (name, email, address_id) VALUES ('Carlos Souza', 'carlos@email.com', 3);
 
 
--- Inserindo registros na tabela goat_farms
-INSERT INTO goat_farms (name, registration_number, owner_id, address_id) VALUES ('Capril Vilar', '123456789', 2, 1);
+INSERT INTO goat_farms (name, owner_id, address_id, tod) VALUES ('Capril Vilar', 2, 1, '16432');
 
 
 INSERT INTO phones (number, owner_id, goat_farm_id) VALUES ('11987654321', 1, 1);
@@ -43,5 +42,4 @@ INSERT INTO goats (registration_number, name, gender, breed, goat_color, status,
 INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('2114517012', 'NAIDE DO CRS', 'Fêmea', 'Alpina', 'Indefinida', 'ATIVO', 'Matriz', '2017-01-01', '1650113018', '2114513061', true);
 
 --  FILHO
-INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active) VALUES ('1643218012', 'XEQUE V DO CAPRIL VILAR', 'Macho', 'Alpina', 'CHAMOISÉE', 'ATIVO', 'POT', '2018-06-27', '1635717065', '2114517012', true);
-
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, birth_date, father_id, mother_id, active, goat_farm_id) VALUES ('1643218012', 'XEQUE V DO CAPRIL VILAR', 'Macho', 'Alpina', 'CHAMOISÉE', 'ATIVO', 'POT', '2018-06-27', '1635717065', '2114517012', true, 1); -- Adicionado goat_farm_id = 1
