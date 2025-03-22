@@ -1,21 +1,27 @@
 package com.caprilvilar.capril.entities;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "goat_farms")
 public class GoatFarm {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     @Column(name = "tod")
     private String tod;
 
-    @ManyToOne
-    @JoinColumn(name = "owner_id")
+    @OneToOne
+    @JoinColumn(name = "owner_id") // Ajustado: coluna de chave estrangeira
     private Owner owner;
 
     @ManyToOne
@@ -25,20 +31,19 @@ public class GoatFarm {
     @OneToMany(mappedBy = "goatFarm", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Phone> phones;
 
-    @OneToMany(mappedBy = "goatFarm", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Goat> goats;
+    @OneToMany(mappedBy = "goatFarm", fetch = FetchType.EAGER)
+    private Set<Goat> goats;
 
-    public GoatFarm() {}
+    public GoatFarm() {
+    }
 
-    public GoatFarm(Long id, String name, String registrationNumber, Owner owner, Address address, String tod) {
-        this.id = id;
+    public GoatFarm(String name, Owner owner, Address address, String tod) {
         this.name = name;
         this.owner = owner;
         this.address = address;
         this.tod = tod;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -55,6 +60,13 @@ public class GoatFarm {
         this.name = name;
     }
 
+    public String getTod() {
+        return tod;
+    }
+
+    public void setTod(String tod) {
+        this.tod = tod;
+    }
 
     public Owner getOwner() {
         return owner;
@@ -80,19 +92,11 @@ public class GoatFarm {
         this.phones = phones;
     }
 
-    public List<Goat> getGoats() {
+    public Set<Goat> getGoats() {
         return goats;
     }
 
-    public void setGoats(List<Goat> goats) {
+    public void setGoats(Set<Goat> goats) {
         this.goats = goats;
-    }
-
-    public String getTod() {
-        return tod;
-    }
-
-    public void setTod(String tod) {
-        this.tod = tod;
     }
 }

@@ -7,7 +7,6 @@ public class OwnerDTO {
     private String email;
 
     public OwnerDTO(){
-
     }
 
     public OwnerDTO(Long id, String name, String email) {

@@ -31,7 +31,7 @@ public class OwnerController {
     @PostMapping
     public OwnerDTO insertOwner(@RequestBody OwnerDTO dto) {
 
-        return ownerService.insetOwner(dto);
+        return ownerService.insertOwner(dto);
     }
 
     @PutMapping(value = "/{id}")

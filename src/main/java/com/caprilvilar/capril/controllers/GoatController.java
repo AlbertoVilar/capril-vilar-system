@@ -14,32 +14,18 @@ public class GoatController {
     @Autowired
     public GoatService service;
 
-    @GetMapping(value = "/{id}")
-    public GoatDTO findById(@PathVariable String id) {
-
-        return service.findById(id);
-    }
-
     @GetMapping
     public List<GoatDTO> findAll() {
-
         return service.findAll();
     }
 
     @PostMapping
     public GoatDTO insert(@RequestBody GoatDTO dto) {
-
         return service.insert(dto);
     }
 
     @PutMapping(value = "/{id}")
     public GoatDTO updateGoat(@PathVariable String id, @RequestBody GoatDTO dto) {
-
-        return service.updateGoat(id, dto);
-    }
-
-    @DeleteMapping(value = "/{id}")
-    public void deleteGoat(@PathVariable String id) {
-        service.deleteGoat(id);
+        return service.update(id, dto);
     }
 }

@@ -15,14 +15,12 @@ public class Goat {
     private String registrationNumber; // PK baseada no número de registro
 
     private String name;
-    private String breeder;
-    private String ownerName;
     private String breed;
 
     @Column(name = "goat_color")
     private String color;
 
-    @Enumerated(EnumType.STRING) // Adicionado para o Enum GoatStatus
+    @Enumerated(EnumType.STRING)
     private GoatStatus status;
 
     private String gender;
@@ -55,13 +53,11 @@ public class Goat {
     }
 
 
-    public Goat(String registrationNumber, String name, String breeder, String ownerName,
-                String breed, String color, GoatStatus status, String gender, String category,
-                String tod, String toe, LocalDate birthDate, Goat father, Goat mother, GoatFarm goatFarm) {
+    public Goat(String registrationNumber, String name, String breed, String color, GoatStatus status,
+                String gender, String category, String tod, String toe, LocalDate birthDate, Goat father, Goat mother,
+                GoatFarm goatFarm) {
         this.registrationNumber = registrationNumber;
         this.name = name;
-        this.breeder = breeder;
-        this.ownerName = ownerName;
         this.breed = breed;
         this.color = color;
         this.status = status;
@@ -91,22 +87,6 @@ public class Goat {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getBreeder() {
-        return breeder;
-    }
-
-    public void setBreeder(String breeder) {
-        this.breeder = breeder;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
     }
 
     public String getBreed() {

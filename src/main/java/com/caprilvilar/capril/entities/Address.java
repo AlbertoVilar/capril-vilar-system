@@ -16,6 +16,7 @@ public class Address {
     private String postalCode;
     private String country;
 
+
     @OneToMany(mappedBy = "address", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<GoatFarm> goatFarms = new ArrayList<>();
 

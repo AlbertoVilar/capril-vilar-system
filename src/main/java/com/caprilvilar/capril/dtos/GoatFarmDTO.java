@@ -1,26 +1,31 @@
 package com.caprilvilar.capril.dtos;
 
+import com.caprilvilar.capril.entities.Address; // Importe a classe Address
+
+import java.util.List;
+
 public class GoatFarmDTO {
     private Long id;
     private String name;
-    private Long ownerId;
-    private Long addressId;
-    private String tod;
+    private Address address; // Modificado para Address
+    private String phoneNumber;
+    private String ownerName;
+    private List<GoatDTO> goats;
 
-
+    // Construtores, getters e setters
     public GoatFarmDTO() {
     }
 
+    // ... outros getters e setters
 
-    public GoatFarmDTO(Long id, String name, Long ownerId, Long addressId, String tod) {
-        this.id = id;
-        this.name = name;
-        this.ownerId = ownerId;
-        this.addressId = addressId;
-        this.tod = tod;
+    public Address getAddress() {
+        return address;
     }
 
-    // Getters e Setters
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     public Long getId() {
         return id;
     }
@@ -37,27 +42,27 @@ public class GoatFarmDTO {
         this.name = name;
     }
 
-    public Long getOwnerId() {
-        return ownerId;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public Long getAddressId() {
-        return addressId;
+    public String getOwnerName() {
+        return ownerName;
     }
 
-    public void setAddressId(Long addressId) {
-        this.addressId = addressId;
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
-    public String getTod() {
-        return tod;
+    public List<GoatDTO> getGoats() {
+        return goats;
     }
 
-    public void setTod(String tod) {
-        this.tod = tod;
+    public void setGoats(List<GoatDTO> goats) {
+        this.goats = goats;
     }
 }

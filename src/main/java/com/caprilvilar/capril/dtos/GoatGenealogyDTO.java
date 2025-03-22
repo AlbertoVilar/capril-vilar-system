@@ -1,19 +1,17 @@
 package com.caprilvilar.capril.dtos;
 
-import com.caprilvilar.capril.entities.GoatStatus;
-
+import com.caprilvilar.capril.dtos.GreatGrandparentDTO;
+import com.caprilvilar.capril.dtos.ParentsDTO;
 
 import java.time.LocalDate;
 import java.util.List;
 
-
-public class GoatDTO {
-
+public class GoatGenealogyDTO {
     private String registrationNumber;
     private String name;
     private String breed;
     private String color;
-    private GoatStatus status;
+    private String status;
     private String gender;
     private String category;
     private String tod;
@@ -21,25 +19,14 @@ public class GoatDTO {
     private LocalDate birthDate;
     private boolean active;
 
-    public GoatDTO() {
-    }
+    private ParentsDTO parents;
+    private List<GrandparentDTO> grandparents;  // Alterado para Lista ✅
+    private List<GreatGrandparentDTO> greatGrandparents; // Alterado para Lista ✅
 
-    public GoatDTO(String registrationNumber, String name, String breed,
-                   String color, GoatStatus status, String gender, String category,
-                   String tod, String toe, LocalDate birthDate, boolean active) {
-        this.registrationNumber = registrationNumber;
-        this.name = name;
-        this.breed = breed;
-        this.color = color;
-        this.status = status;
-        this.gender = gender;
-        this.category = category;
-        this.tod = tod;
-        this.toe = toe;
-        this.birthDate = birthDate;
-        this.active = active;
-    }
+    // Construtor vazio
+    public GoatGenealogyDTO() {}
 
+    // Getters e Setters
     public String getRegistrationNumber() {
         return registrationNumber;
     }
@@ -72,11 +59,11 @@ public class GoatDTO {
         this.color = color;
     }
 
-    public GoatStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(GoatStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -126,5 +113,29 @@ public class GoatDTO {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public ParentsDTO getParents() {
+        return parents;
+    }
+
+    public void setParents(ParentsDTO parents) {
+        this.parents = parents;
+    }
+
+    public List<GrandparentDTO> getGrandparents() {
+        return grandparents;
+    }
+
+    public void setGrandparents(List<GrandparentDTO> grandparents) {
+        this.grandparents = grandparents;
+    }
+
+    public List<GreatGrandparentDTO> getGreatGrandparents() {
+        return greatGrandparents;
+    }
+
+    public void setGreatGrandparents(List<GreatGrandparentDTO> greatGrandparents) {
+        this.greatGrandparents = greatGrandparents;
     }
 }
