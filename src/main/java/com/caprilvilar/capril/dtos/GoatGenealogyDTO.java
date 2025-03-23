@@ -1,14 +1,12 @@
 package com.caprilvilar.capril.dtos;
 
-import com.caprilvilar.capril.dtos.GreatGrandparentDTO;
-import com.caprilvilar.capril.dtos.ParentsDTO;
-
 import java.time.LocalDate;
 import java.util.List;
 
 public class GoatGenealogyDTO {
     private String registrationNumber;
     private String name;
+    private String ownerName; // Adicionado o campo ownerName
     private String breed;
     private String color;
     private String status;
@@ -20,8 +18,9 @@ public class GoatGenealogyDTO {
     private boolean active;
 
     private ParentsDTO parents;
-    private List<GrandparentDTO> grandparents;  // Alterado para Lista ✅
-    private List<GreatGrandparentDTO> greatGrandparents; // Alterado para Lista ✅
+    private List<GrandparentDTO> grandparents;
+    private List<GreatGrandparentDTO> greatGrandparents;
+
 
     // Construtor vazio
     public GoatGenealogyDTO() {}
@@ -137,5 +136,13 @@ public class GoatGenealogyDTO {
 
     public void setGreatGrandparents(List<GreatGrandparentDTO> greatGrandparents) {
         this.greatGrandparents = greatGrandparents;
+    }
+
+    public String getOwnerName() { // Getter para ownerName
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) { // Setter para ownerName
+        this.ownerName = ownerName;
     }
 }

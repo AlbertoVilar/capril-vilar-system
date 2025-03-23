@@ -5,13 +5,15 @@ import com.caprilvilar.capril.dtos.GrandparentDTO;
 import com.caprilvilar.capril.dtos.GreatGrandparentDTO;
 import com.caprilvilar.capril.dtos.ParentsDTO;
 import com.caprilvilar.capril.entities.Goat;
+import com.caprilvilar.capril.entities.GoatFarm;
+import com.caprilvilar.capril.entities.Owner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Component; // Adicione esta importação
+import org.springframework.stereotype.Component;
 
-@Component // Adicione esta anotação
+@Component
 public class GoatGenealogyMapper {
 
     public GoatGenealogyDTO toDTO(Goat goat) {
@@ -37,6 +39,9 @@ public class GoatGenealogyMapper {
 
         // Mapeando os bisavós
         dto.setGreatGrandparents(mapGreatGrandparents(goat));
+
+        // Mapeando o nome do proprietário
+        dto.setOwnerName(mapOwnerName(goat));
 
         return dto;
     }
@@ -144,6 +149,16 @@ public class GoatGenealogyMapper {
         }
 
         return greatGrandparents;
+    }
 
+    private String mapOwnerName(Goat goat) {
+        if (goat.getGoatFarm() != null) {
+            GoatFarm goatFarm = goat.getGoatFarm();
+            if (goatFarm.getOwner() != null) {
+                Owner owner = goatFarm.getOwner();
+                return owner.getName();
+            }
+        }
+        return null;
     }
 }

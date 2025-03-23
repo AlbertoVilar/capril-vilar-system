@@ -43,3 +43,5 @@ INSERT INTO goats (registration_number, name, gender, breed, goat_color, status,
 
 --  FILHO
 INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, tod, toe, birth_date, father_id, mother_id, active, goat_farm_id) VALUES ('1643218012', 'XEQUE V DO CAPRIL VILAR', 'Macho', 'Alpina', 'CHAMOISÉE', 'ATIVO', 'POT', '16432', '18012', '2018-06-27', '1635717065', '2114517012', true, 1);
+
+INSERT INTO goats (registration_number, name, gender, breed, goat_color, status, category, tod, toe, birth_date, father_id, mother_id, active, goat_farm_id) VALUES ('1643218013', 'IRMÃO DO XEQUE', 'Fêmea', 'Alpina', 'CHAMOISÉE', 'ATIVO', 'POT', '16432', '18013', '2020-01-01', '1635717065', '2114517012', true, 1);

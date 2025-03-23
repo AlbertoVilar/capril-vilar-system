@@ -17,5 +17,11 @@ public interface GoatRepository extends JpaRepository<Goat, String> {
             "WHERE g.registrationNumber = :registrationNumber")
     Optional<Goat> findGoatWithParents(@Param("registrationNumber") String registrationNumber);
 
-    // Outros métodos...
+    @Query("SELECT g, o.name FROM Goat g " +
+            "LEFT JOIN FETCH g.father f " +
+            "LEFT JOIN FETCH g.mother m " +
+            "LEFT JOIN g.goatFarm gf " +
+            "LEFT JOIN gf.owner o " +
+            "WHERE g.registrationNumber = :registrationNumber")
+    Optional<Object[]> findGoatWithParentsAndOwnerName(@Param("registrationNumber") String registrationNumber);
 }

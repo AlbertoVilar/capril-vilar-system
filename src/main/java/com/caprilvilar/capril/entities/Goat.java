@@ -39,8 +39,7 @@ public class Goat {
     @JsonIgnore
     private Goat mother;
 
-    // Goat.java
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "goat_farm_id")
     private GoatFarm goatFarm;
 
