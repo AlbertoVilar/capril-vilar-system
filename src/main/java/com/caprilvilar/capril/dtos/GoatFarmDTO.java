@@ -1,31 +1,31 @@
 package com.caprilvilar.capril.dtos;
 
-import com.caprilvilar.capril.entities.Address; // Importe a classe Address
-
+import com.caprilvilar.capril.entities.Address;
 import java.util.List;
 
 public class GoatFarmDTO {
     private Long id;
     private String name;
-    private Address address; // Modificado para Address
+    private Address address;
     private String phoneNumber;
     private String ownerName;
     private List<GoatDTO> goats;
 
-    // Construtores, getters e setters
+    // Construtor padrão
     public GoatFarmDTO() {
     }
 
-    // ... outros getters e setters
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
+    // Construtor parametrizado
+    public GoatFarmDTO(Long id, String name, Address address, String phoneNumber, String ownerName, List<GoatDTO> goats) {
+        this.id = id;
+        this.name = name;
         this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.ownerName = ownerName;
+        this.goats = goats;
     }
 
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -40,6 +40,14 @@ public class GoatFarmDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getPhoneNumber() {

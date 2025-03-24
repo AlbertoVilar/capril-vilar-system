@@ -5,8 +5,11 @@ import com.caprilvilar.capril.entities.Goat;
 import com.caprilvilar.capril.mappers.GoatGenealogyMapper;
 import com.caprilvilar.capril.repositories.GoatRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.io.Reader;
 import java.util.Optional;
 
 @Service
@@ -21,6 +24,7 @@ public class GoatGenealogyService {
         this.goatGenealogyMapper = goatGenealogyMapper;
     }
 
+    @Transactional
     public GoatGenealogyDTO findGoatGenealogy(String registrationNumber) {
         Optional<Goat> goatOptional = goatRepository.findGoatWithParents(registrationNumber);
 

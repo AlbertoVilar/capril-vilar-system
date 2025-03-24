@@ -10,11 +10,11 @@ public class Phone {
     private Long id;
     private String number;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id", nullable = true)
     private Owner owner;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "goat_farm_id", nullable = true)
     private GoatFarm goatFarm;
 
@@ -27,7 +27,6 @@ public class Phone {
         this.goatFarm = goatFarm;
     }
 
-    // Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getNumber() { return number; }

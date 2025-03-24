@@ -1,10 +1,7 @@
 package com.caprilvilar.capril.entities;
 
 import jakarta.persistence.*;
-
-import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,21 +18,20 @@ public class GoatFarm {
     private String tod;
 
     @OneToOne
-    @JoinColumn(name = "owner_id") // Ajustado: coluna de chave estrangeira
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany(mappedBy = "goatFarm", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Phone> phones;
+    @OneToMany(mappedBy = "goatFarm", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Set<Phone> phones = new HashSet<>();
 
-    @OneToMany(mappedBy = "goatFarm", fetch = FetchType.EAGER)
-    private Set<Goat> goats;
+    @OneToMany(mappedBy = "goatFarm", fetch = FetchType.LAZY)
+    private Set<Goat> goats = new HashSet<>();
 
-    public GoatFarm() {
-    }
+    public GoatFarm() {}
 
     public GoatFarm(String name, Owner owner, Address address, String tod) {
         this.name = name;
@@ -44,59 +40,38 @@ public class GoatFarm {
         this.tod = tod;
     }
 
-    public Long getId() {
-        return id;
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getTod() { return tod; }
+    public void setTod(String tod) { this.tod = tod; }
+    public Owner getOwner() { return owner; }
+    public void setOwner(Owner owner) { this.owner = owner; }
+    public Address getAddress() { return address; }
+    public void setAddress(Address address) { this.address = address; }
+    public Set<Phone> getPhones() { return phones; }
+    public void setPhones(Set<Phone> phones) { this.phones = phones; }
+    public Set<Goat> getGoats() { return goats; }
+    public void setGoats(Set<Goat> goats) { this.goats = goats; }
+
+    public void addPhone(Phone phone) {
+        phones.add(phone);
+        phone.setGoatFarm(this);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void removePhone(Phone phone) {
+        phones.remove(phone);
+        phone.setGoatFarm(null);
     }
 
-    public String getName() {
-        return name;
+    public void addGoat(Goat goat) {
+        goats.add(goat);
+        goat.setGoatFarm(this);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTod() {
-        return tod;
-    }
-
-    public void setTod(String tod) {
-        this.tod = tod;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public List<Phone> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(List<Phone> phones) {
-        this.phones = phones;
-    }
-
-    public Set<Goat> getGoats() {
-        return goats;
-    }
-
-    public void setGoats(Set<Goat> goats) {
-        this.goats = goats;
+    public void removeGoat(Goat goat) {
+        goats.remove(goat);
+        goat.setGoatFarm(null);
     }
 }

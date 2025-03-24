@@ -25,6 +25,23 @@ public class GoatGenealogyDTO {
     // Construtor vazio
     public GoatGenealogyDTO() {}
 
+    public GoatGenealogyDTO(String registrationNumber, String name, String ownerName, String breed, String color,
+                            String status, String gender, String category, String tod, String toe, LocalDate birthDate,
+                            boolean active) {
+        this.registrationNumber = registrationNumber;
+        this.name = name;
+        this.ownerName = ownerName;
+        this.breed = breed;
+        this.color = color;
+        this.status = status;
+        this.gender = gender;
+        this.category = category;
+        this.tod = tod;
+        this.toe = toe;
+        this.birthDate = birthDate;
+        this.active = active;
+    }
+
     // Getters e Setters
     public String getRegistrationNumber() {
         return registrationNumber;

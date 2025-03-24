@@ -15,14 +15,14 @@ public class Owner {
     private String name;
     private String email;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private Address address;
 
     @OneToOne(mappedBy = "owner", cascade = CascadeType.ALL)
     private GoatFarm goatFarm;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Phone> phones = new ArrayList<>();
 
     public Owner() {}
@@ -32,7 +32,6 @@ public class Owner {
         this.email = email;
         this.address = address;
     }
-
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
@@ -44,6 +43,6 @@ public class Owner {
     public void setAddress(Address address) { this.address = address; }
     public List<Phone> getPhones() { return phones; }
     public void setPhones(List<Phone> phones) { this.phones = phones; }
-    public GoatFarm getGoatFarm() {return goatFarm;}
-    public void setGoatFarm(GoatFarm goatFarm) {this.goatFarm = goatFarm;}
+    public GoatFarm getGoatFarm() { return goatFarm; }
+    public void setGoatFarm(GoatFarm goatFarm) { this.goatFarm = goatFarm; }
 }
