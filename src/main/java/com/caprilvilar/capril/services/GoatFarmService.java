@@ -4,9 +4,10 @@ import com.caprilvilar.capril.dtos.GoatFarmDTO;
 import com.caprilvilar.capril.entities.GoatFarm;
 import com.caprilvilar.capril.mappers.GoatFarmMapper;
 import com.caprilvilar.capril.repositories.GoatFarmRepository;
-import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class GoatFarmService {
@@ -17,7 +18,13 @@ public class GoatFarmService {
     @Autowired
     private GoatFarmMapper goatFarmMapper;
 
-    @Transactional
+    @Transactional(readOnly = true)
+    public GoatFarmDTO getGoatFarmByIdLazy(Long id) {
+        GoatFarm goatFarmOptional = goatFarmRepository.findById(id).orElseThrow();
+        return goatFarmMapper.toDTO(goatFarmOptional);
+    }
+
+    @Transactional(readOnly = true) // Correção: readOnly = true
     public GoatFarmDTO getGoatFarmById(Long id) {
         GoatFarm goatFarm = goatFarmRepository.findGoatFarmWithPhonesById(id);
         if (goatFarm == null) {

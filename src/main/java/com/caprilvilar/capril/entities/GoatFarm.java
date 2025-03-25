@@ -1,12 +1,18 @@
 package com.caprilvilar.capril.entities;
 
 import jakarta.persistence.*;
+
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "goat_farms")
-public class GoatFarm {
+public class GoatFarm implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,38 +46,59 @@ public class GoatFarm {
         this.tod = tod;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getTod() { return tod; }
-    public void setTod(String tod) { this.tod = tod; }
-    public Owner getOwner() { return owner; }
-    public void setOwner(Owner owner) { this.owner = owner; }
-    public Address getAddress() { return address; }
-    public void setAddress(Address address) { this.address = address; }
-    public Set<Phone> getPhones() { return phones; }
-    public void setPhones(Set<Phone> phones) { this.phones = phones; }
-    public Set<Goat> getGoats() { return goats; }
-    public void setGoats(Set<Goat> goats) { this.goats = goats; }
-
-    public void addPhone(Phone phone) {
-        phones.add(phone);
-        phone.setGoatFarm(this);
+    public Long getId() {
+        return id;
     }
 
-    public void removePhone(Phone phone) {
-        phones.remove(phone);
-        phone.setGoatFarm(null);
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void addGoat(Goat goat) {
-        goats.add(goat);
-        goat.setGoatFarm(this);
+    public String getName() {
+        return name;
     }
 
-    public void removeGoat(Goat goat) {
-        goats.remove(goat);
-        goat.setGoatFarm(null);
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTod() {
+        return tod;
+    }
+
+    public void setTod(String tod) {
+        this.tod = tod;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Set<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(Set<Phone> phones) {
+        this.phones = phones;
+    }
+
+    public Set<Goat> getGoats() {
+        return goats;
+    }
+
+    public void setGoats(Set<Goat> goats) {
+        this.goats = goats;
     }
 }

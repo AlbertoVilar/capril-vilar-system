@@ -28,30 +28,29 @@ public class OwnerService {
     public OwnerDTO findById(Long id) {
         Owner owner = repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Owner not found with id: " + id));
-        return ownerMapper.dtoTo(owner);
+        return ownerMapper.toDTO(owner); // Atualizado para toDTO
     }
 
     public List<OwnerDTO> findAll() {
         List<Owner> owners = repository.findAll();
-        return owners.stream().map(ownerMapper::dtoTo).collect(Collectors.toUnmodifiableList());
+        return owners.stream().map(ownerMapper::toDTO).collect(Collectors.toUnmodifiableList()); // Atualizado para toDTO
     }
 
     public OwnerDTO insertOwner(OwnerDTO dto) {
-        Owner owner = ownerMapper.entityTo(dto);
+        Owner owner = ownerMapper.toEntity(dto); // Atualizado para toEntity
         Owner savedOwner = repository.save(owner);
-        return ownerMapper.dtoTo(savedOwner);
+        return ownerMapper.toDTO(savedOwner); // Atualizado para toDTO
     }
 
     public OwnerDTO updateOwner(OwnerDTO dto, Long id) {
         Owner existingOwner = repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Owner not found with id: " + id));
 
-
-        Owner updatedOwner = ownerMapper.entityTo(dto);
+        Owner updatedOwner = ownerMapper.toEntity(dto); // Atualizado para toEntity
         updatedOwner.setId(existingOwner.getId()); // Garante que o ID seja preservado
         updatedOwner = repository.save(updatedOwner);
 
-        return ownerMapper.dtoTo(updatedOwner);
+        return ownerMapper.toDTO(updatedOwner); // Atualizado para toDTO
     }
 
     public void delete(Long id) {

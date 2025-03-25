@@ -1,14 +1,13 @@
 package com.caprilvilar.capril.dtos;
 
-import com.caprilvilar.capril.entities.Address;
 import java.util.List;
 
 public class GoatFarmDTO {
     private Long id;
     private String name;
-    private Address address;
-    private String phoneNumber;
-    private String ownerName;
+    private AddressDTO address;
+    private List<PhoneDTO> phones;
+    private OwnerNameDTO ownerName; // Usando OwnerNameDTO
     private List<GoatDTO> goats;
 
     // Construtor padrão
@@ -16,12 +15,12 @@ public class GoatFarmDTO {
     }
 
     // Construtor parametrizado
-    public GoatFarmDTO(Long id, String name, Address address, String phoneNumber, String ownerName, List<GoatDTO> goats) {
+    public GoatFarmDTO(Long id, String name, AddressDTO address, List<PhoneDTO> phones, OwnerNameDTO ownerName, List<GoatDTO> goats) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.ownerName = ownerName;
+        this.phones = phones;
+        this.ownerName = ownerName; // Usando OwnerNameDTO
         this.goats = goats;
     }
 
@@ -42,27 +41,27 @@ public class GoatFarmDTO {
         this.name = name;
     }
 
-    public Address getAddress() {
+    public AddressDTO getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(AddressDTO address) {
         this.address = address;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public List<PhoneDTO> getPhones() {
+        return phones;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhones(List<PhoneDTO> phones) {
+        this.phones = phones;
     }
 
-    public String getOwnerName() {
+    public OwnerNameDTO getOwnerName() { // Usando OwnerNameDTO
         return ownerName;
     }
 
-    public void setOwnerName(String ownerName) {
+    public void setOwnerName(OwnerNameDTO ownerName) { // Usando OwnerNameDTO
         this.ownerName = ownerName;
     }
 

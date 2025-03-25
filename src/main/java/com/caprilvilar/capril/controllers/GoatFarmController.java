@@ -17,6 +17,6 @@ public class GoatFarmController {
 
     @GetMapping("/{id}")
     public GoatFarmDTO findById(@PathVariable Long id) {
-        return service.getGoatFarmById(id);
+        return service.getGoatFarmById(id); // Use getGoatFarmById aqui
     }
 }
